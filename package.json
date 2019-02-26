@@ -1,10 +1,13 @@
 {
   "name": "braingames34",
   "version": "0.0.5",
-  "description": "",
-  "main": "index.js",
+  "description": "First study project. Create console game for linux",
+  "keywords": "games, interactive, braingames",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
+  },
+  "engines": {
+    "node": ">=8"
   },
   "files": [
     "dist"
@@ -13,17 +16,19 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex343434/project-lvl1-s454.git"
+  },
   "author": "alex343434",
   "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.3.4"
-  },
-  "dependencies": {
-    "install": "^0.12.2",
-    "npm": "^6.8.0",
-    "readline-sync": "^1.4.9"
   }
 }

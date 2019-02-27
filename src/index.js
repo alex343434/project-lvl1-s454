@@ -1,23 +1,28 @@
-import welcome from './welcome';
-import getUserName from './getUserName';
-import rulesOfgame from './rulesOfgame';
+import readlineSync from 'readline-sync';
 import brainEven from './games';
 
+const rulesOfgame = (nameOfgame) => {
+  if (nameOfgame === 'brain-even') {
+    console.log('Answer "yes" if number even otherwise answer "no"');
+  }
+  if (nameOfgame === 'something') {
+    console.log();
+  }
+};
+
 export const braingames = () => {
-  welcome();
+  console.log('\nWelcome to the Brain Games!');
   console.log();
-  const userName = getUserName();
-  console.log(`Hello, ${userName}`);
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
 };
 
 export const braineven = () => {
-  welcome();
+  console.log('\nWelcome to the Brain Games!');
   rulesOfgame('brain-even');
   console.log();
-  const userName = getUserName();
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log();
   brainEven(userName);
 };
-
-// я сразу извиняюсь за говнокод... Что должно лежать в index.js?

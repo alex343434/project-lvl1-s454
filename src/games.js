@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const getCorrectAnswer = (nameOfgame, ask, answer) => {
+const getCorrectAnswer = (nameOfgame, question) => {
   if (nameOfgame === 'brain-even') {
-    if (ask % 2 === 0 && answer === 'yes') {
+    if (question % 2 === 0) {
       return 'yes';
     }
     return 'no';

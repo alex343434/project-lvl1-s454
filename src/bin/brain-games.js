@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import Greeting from '..';
+import { braingames } from '..';
 
-Greeting();
+braingames();

@@ -1,6 +1,6 @@
 {
   "name": "braingames34",
-  "version": "0.1.4",
+  "version": "0.1.9",
   "description": "First study project. Create console game for linux",
   "keywords": [
     "games",
@@ -9,7 +9,8 @@
   ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "engines": {
     "node": ">=8"

@@ -23,11 +23,11 @@ export default (userName) => {
       const answer = readlineSync.question('Your answer: ');
       const correctAnswer = getResult(operand1, operand2, randOperator);
       if (correctAnswer === Number(answer)) {
-        console.log('Correct!\n');
+        console.log('Correct!');
         return iter(counter - 1);
       }
-      console.log(`'${answer}' is wrong answer ;(. Correct answer`);
-      return console.log(`was '${correctAnswer}'.Let's try again, ${userName}!`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      return console.log(`Let's try again, ${userName}!`);
     }
     return console.log(`Congratulations, ${userName}!`);
   };

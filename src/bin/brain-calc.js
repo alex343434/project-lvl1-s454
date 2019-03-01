@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { braincalc } from '..';
+import generator from '..';
 
-braincalc();
+generator('brain-calc');

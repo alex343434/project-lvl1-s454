@@ -3,12 +3,12 @@
 [![Build Status](https://travis-ci.org/alex343434/project-lvl1-s454.svg?branch=master)](https://travis-ci.org/alex343434/project-lvl1-s454)
 -------------
 ## install packade:
-npm install -g braingames@0.2.4                     
-[install example](https://asciinema.org/a/XHMcoDxPDhzE4S3HsxEHlQKbe)
+npm install -g braingames@0.2.5                     
+[install example](https://asciinema.org/a/8oHRSAuCwSVcQj7KHAAQ1o0Ni)
 
 ## games:
-1. [brain-games](https://asciinema.org/a/J24JVK3pg9bV5pzxupq2M2KDa)
-2. [brain-even](https://asciinema.org/a/OCBIJsSMddj2FVYJ7nYUvtjnk)
-3. [brain-calc](https://asciinema.org/a/RXkcmWzphMECEgQgsLFwlcylr)
-4. [brain-gcd](https://asciinema.org/a/Wbd3sBagtJKq726esrhB78iP2)
-5. [brain-progression](https://asciinema.org/a/yvlVeipoDFACXJb0ejFyW26qs)
+1. [brain-games](https://asciinema.org/a/EF07OSVE7Jq3y08Xigj2mnN1R)
+2. [brain-even](https://asciinema.org/a/VPuk0SbtjSKn3NlRvdhKqwu0y)
+3. [brain-calc](https://asciinema.org/a/PIaUrjy43ywcTi31P3Fn899HP)
+4. [brain-gcd](https://asciinema.org/a/6VyQyFScKRQEIHc955I7xtS7z)
+5. [brain-progression](https://asciinema.org/a/ZtuY8CuzgBqm3RNA4sKJYrqKZ)

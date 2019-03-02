@@ -20,20 +20,20 @@ const failBye = (userName, userAnswer, pair) => {
 
 export const makePair = (question, answer) => cons(question, answer);
 
-export const generator = (rule, rounds) => {
+export const generator = (rule, makeData) => {
   console.log('Welcome to the Brain Games!');
   console.log(rule);
   console.log();
   const userName = getName();
   console.log();
   for (let i = 0; i < 3; i += 1) {
-    const round = rounds[i];
-    const question = getQuestion(round);
+    const data = makeData();
+    const question = getQuestion(data);
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
-    const answer = getAnswer(round);
+    const answer = getAnswer(data);
     if (userAnswer !== answer) {
-      return failBye(userName, userAnswer, round);
+      return failBye(userName, userAnswer, data);
     }
     console.log('Correct!\n');
   }

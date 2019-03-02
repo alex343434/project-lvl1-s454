@@ -9,18 +9,15 @@ const getResult = (operand1, operand2, randOperator) => {
     default: return 'unknown operator';
   }
 };
-
-export default () => {
-  const rule = 'What is the result of the expression?';
-  const rounds = [];
+const rule = 'What is the result of the expression?';
+const makeData = () => {
   const operators = ['+', '-', '*'];
-  for (let i = 0; i < 3; i += 1) {
-    const randOperator = operators[getNum(0, 2)];
-    const operand1 = getNum(1, 15);
-    const operand2 = getNum(1, 15);
-    const question = `Question: ${operand1} ${randOperator} ${operand2}`;
-    const answer = getResult(operand1, operand2, randOperator);
-    rounds[i] = makePair(question, `${answer}`);
-  }
-  generator(rule, rounds);
+  const randOperator = operators[getNum(0, 2)];
+  const operand1 = getNum(1, 15);
+  const operand2 = getNum(1, 15);
+  const question = `Question: ${operand1} ${randOperator} ${operand2}`;
+  const answer = `${getResult(operand1, operand2, randOperator)}`;
+  return makePair(question, answer);
 };
+
+export default () => generator(rule, makeData);

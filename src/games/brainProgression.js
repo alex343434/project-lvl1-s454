@@ -9,21 +9,20 @@ const massivToStr = (massivTen) => {
   return str;
 };
 
-export default () => {
-  const rule = 'What number is missing in the progression?';
-  const rounds = [];
-  for (let i = 0; i < 3; i += 1) {
-    const beginNum = getNum(1, 20);
-    const stepProgr = getNum(1, 30);
-    const unknownPosition = getNum(0, 9);
-    const arifmeticProgr = [beginNum];
-    for (let j = 1; j < 10; j += 1) {
-      arifmeticProgr[j] = arifmeticProgr[j - 1] + stepProgr;
-    }
-    arifmeticProgr[unknownPosition] = '..';
-    const question = `Question: ${massivToStr(arifmeticProgr)}`;
-    const answer = `${arifmeticProgr[unknownPosition - 1] + stepProgr}`;
-    rounds[i] = makePair(question, answer);
+const rule = 'What number is missing in the progression?';
+
+const makeData = () => {
+  const beginNum = getNum(1, 20);
+  const stepProgr = getNum(1, 30);
+  const unknownPosition = getNum(0, 9);
+  const arifmeticProgr = [beginNum];
+  for (let i = 1; i < 10; i += 1) {
+    arifmeticProgr[i] = arifmeticProgr[i - 1] + stepProgr;
   }
-  generator(rule, rounds);
+  arifmeticProgr[unknownPosition] = '..';
+  const question = `Question: ${massivToStr(arifmeticProgr)}`;
+  const answer = `${arifmeticProgr[unknownPosition - 1] + stepProgr}`;
+  return makePair(question, answer);
 };
+
+export default () => generator(rule, makeData);

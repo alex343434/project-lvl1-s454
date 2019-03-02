@@ -1,60 +1,41 @@
 import readlineSync from 'readline-sync';
-import { car, cdr } from 'hexlet-pairs';
-import brainEven from './games/brainEven';
-import brainCalc from './games/brainCalc';
-import brainGcd from './games/brainGcd';
+import { cons, car, cdr } from 'hexlet-pairs';
 
-
-const rulesOfgame = (nameOfgame) => {
-  if (nameOfgame === 'brain-even') {
-    console.log('Answer "yes" if number even otherwise answer "no"');
-  } else if (nameOfgame === 'brain-calc') {
-    console.log('What is the result of the expression?');
-  } else if (nameOfgame === 'brain-gcd') {
-    console.log('Find the greatest common divisor of given numbers');
-  }
-};
+const getQuestion = pair => car(pair);
+const getAnswer = pair => cdr(pair);
 
 export const getName = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   return userName;
 };
-
-const getQuestion = (game) => {
-  if (game === 'brain-even') {
-    return brainEven();
-  }
-  if (game === 'brain-calc') {
-    return brainCalc();
-  }
-  if (game === 'brain-gcd') {
-    return brainGcd();
-  }
-  return 'unknown';
+const successBye = (userName) => {
+  console.log(`Congratulations, ${userName}!`);
+};
+const failBye = (userName, userAnswer, pair) => {
+  console.log(`'${userAnswer}' is wrong answer ;(.`);
+  console.log(`Correct answer was '${getAnswer(pair)}'.`);
+  console.log(`Let's try again, ${userName}!`);
 };
 
-const exercize = (game, times, userName) => {
-  const question = getQuestion(game);
-  console.log(car(question));
-  const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = cdr(question);
+export const makePair = (question, answer) => cons(question, answer);
 
-  if (answer === correctAnswer) {
-    if (times > 1) {
-      console.log('Correct!\n');
-      return exercize(game, times - 1, userName);
-    }
-    return console.log(`Congratulations, ${userName}!`);
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return console.log(`Let's try again, ${userName}!`);
-};
-
-export default (game) => {
+export const generator = (rule, rounds) => {
   console.log('Welcome to the Brain Games!');
-  rulesOfgame(game);
+  console.log(rule);
   console.log();
   const userName = getName();
-  exercize(game, 3, userName);
+  console.log();
+  for (let i = 0; i < 3; i += 1) {
+    const round = rounds[i];
+    const question = getQuestion(round);
+    console.log(question);
+    const userAnswer = readlineSync.question('Your answer: ');
+    const answer = getAnswer(round);
+    if (userAnswer !== answer) {
+      return failBye(userName, userAnswer, round);
+    }
+    console.log('Correct!\n');
+  }
+  return successBye(userName);
 };

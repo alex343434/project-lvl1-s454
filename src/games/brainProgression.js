@@ -1,27 +1,22 @@
 import getNum from '../helpfull';
-import { makePair, generator } from '../index';
-
-const massivToStr = (massivTen) => {
-  let str = '';
-  for (let i = 0; i < 10; i += 1) {
-    str += `${massivTen[i]}  `;
-  }
-  return str;
-};
+import { makePair, generator } from '..';
 
 const rule = 'What number is missing in the progression?';
 
 const makeData = () => {
-  const beginNum = getNum(1, 20);
-  const stepProgr = getNum(1, 30);
+  const begin = getNum(1, 20);
+  const step = getNum(1, 30);
   const unknownPosition = getNum(0, 9);
-  const arifmeticProgr = [beginNum];
-  for (let i = 1; i < 10; i += 1) {
-    arifmeticProgr[i] = arifmeticProgr[i - 1] + stepProgr;
+  let progression = '';
+  for (let i = 0; i < 10; i += 1) {
+    if (i === unknownPosition) {
+      progression += '.. ';
+      i += 1;
+    }
+    progression += `${begin + step * i} `;
   }
-  arifmeticProgr[unknownPosition] = '..';
-  const question = `Question: ${massivToStr(arifmeticProgr)}`;
-  const answer = `${arifmeticProgr[unknownPosition - 1] + stepProgr}`;
+  const question = `Question: ${progression}`;
+  const answer = `${begin + step * unknownPosition}`;
   return makePair(question, answer);
 };
 

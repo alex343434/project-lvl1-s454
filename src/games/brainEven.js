@@ -1,5 +1,5 @@
 import getNum from '../helpfull';
-import { makePair, generator } from '../index';
+import { makePair, generator } from '..';
 
 const isEven = number => (number % 2 === 0);
 const rule = '"yes" if number even otherwise answer "no".';

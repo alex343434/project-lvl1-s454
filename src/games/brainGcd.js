@@ -1,5 +1,5 @@
 import getNum from '../helpfull';
-import { makePair, generator } from '../index';
+import { makePair, generator } from '..';
 
 const gcd = (num1, num2) => {
   if (num1 < num2) {

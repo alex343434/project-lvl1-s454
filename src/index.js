@@ -37,5 +37,5 @@ export const generator = (rule, makeData) => {
     }
     console.log('Correct!\n');
   }
-  return successBye(userName);
+  successBye(userName);
 };

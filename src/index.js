@@ -33,7 +33,8 @@ export const generator = (rule, makeData) => {
     const userAnswer = readlineSync.question('Your answer: ');
     const answer = getAnswer(data);
     if (userAnswer !== answer) {
-      return failBye(userName, userAnswer, data);
+      failBye(userName, userAnswer, data);
+      return;
     }
     console.log('Correct!\n');
   }

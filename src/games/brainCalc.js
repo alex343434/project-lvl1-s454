@@ -12,7 +12,7 @@ const getResult = (operand1, operand2, randOperator) => {
 const rule = 'What is the result of the expression?';
 const makeData = () => {
   const operators = ['+', '-', '*'];
-  const randOperator = operators[getNum(0, operators.length) - 1];
+  const randOperator = operators[getNum(0, (operators.length - 1))];
   const operand1 = getNum(1, 15);
   const operand2 = getNum(1, 15);
   const question = `Question: ${operand1} ${randOperator} ${operand2}`;

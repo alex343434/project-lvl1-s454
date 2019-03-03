@@ -1,23 +1,24 @@
 import getNum from '../helpfull';
-import { makePair, generator } from '..';
+import { makePair, generate } from '../generate';
 
 const rule = 'What number is missing in the progression?';
 
-const makeData = () => {
+const makeQuestionAnswer = () => {
   const begin = getNum(1, 20);
-  const step = getNum(1, 30);
-  const unknownPosition = getNum(0, 9);
+  const step = getNum(1, 20);
+  const unknownMember = getNum(0, 9);
   let progression = '';
-  for (let i = 0; i < 10; i += 1) {
-    if (i === unknownPosition) {
+  const maxMembers = 10;
+  for (let member = 0; member < maxMembers; member += 1) {
+    if (member === unknownMember) {
       progression += '.. ';
-      i += 1;
+      member += 1;
     }
-    progression += `${begin + step * i} `;
+    progression += `${begin + step * member} `;
   }
-  const question = `Question: ${progression}`;
-  const answer = `${begin + step * unknownPosition}`;
+  const question = progression.trim();
+  const answer = (begin + step * unknownMember).toString();
   return makePair(question, answer);
 };
 
-export default () => generator(rule, makeData);
+export default () => generate(rule, makeQuestionAnswer);

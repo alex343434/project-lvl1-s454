@@ -1,5 +1,5 @@
 import getNum from '../helpfull';
-import { makePair, generator } from '..';
+import { makePair, generate } from '../generate';
 
 const gcd = (num1, num2) => {
   if (num1 < num2) {
@@ -16,12 +16,12 @@ const gcd = (num1, num2) => {
   return divident;
 };
 const rule = 'Find the greatest common divisor of given numbers.';
-const makeData = () => {
+const makeQuestionAnswer = () => {
   const num1 = getNum(1, 100);
-  const num2 = getNum(1, 100);
-  const question = `Question: ${num1} ${num2}`;
+  const num2 = getNum(1, 25);
+  const question = `${num1} ${num2}`;
   const answer = `${gcd(num1, num2)}`;
   return makePair(question, answer);
 };
 
-export default () => generator(rule, makeData);
+export default () => generate(rule, makeQuestionAnswer);

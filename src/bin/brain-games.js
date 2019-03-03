@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { getName } from '..';
+import welcome from '..';
 
-console.log('Welcome to the Brain Games!\n');
-getName();
+welcome();

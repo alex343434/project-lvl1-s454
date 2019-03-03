@@ -3,13 +3,14 @@ import { makePair, generate } from '../generate';
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const smallestDivisor = (number) => {
+  const initialTestDivider = 2;
   const findDivisor = (testDivisor) => {
     if (number % testDivisor === 0) {
       return testDivisor;
     }
     return findDivisor(testDivisor + 1);
   };
-  return findDivisor(2);
+  return findDivisor(initialTestDivider);
 };
 const isPrime = (number) => {
   if (number < 2) {

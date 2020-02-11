@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/alex343434/project-lvl1-s454.svg?branch=master)](https://travis-ci.org/alex343434/project-lvl1-s454)
 -------------
 ## install packade:
-npm install -g braingames@0.3.0                     
+npm install -g braingames34                     
 [install example](https://asciinema.org/a/C9AE5HnR99C62agAd6b6Qc4B6)
 
 ## games:
